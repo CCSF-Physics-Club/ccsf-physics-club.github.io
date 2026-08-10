@@ -311,3 +311,11 @@ li {
   height: auto;
   border: 1px solid #111111;
 }
+
+.welcome-line {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 0;
+}
