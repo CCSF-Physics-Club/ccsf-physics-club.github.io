@@ -300,3 +300,14 @@ li {
   padding-bottom: 8px;
   border-bottom: 1px solid #111111;
 }
+
+.home-gif {
+  text-align: center;
+  margin: 1.5rem 0 2rem;
+}
+
+.home-gif img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #111111;
+}
