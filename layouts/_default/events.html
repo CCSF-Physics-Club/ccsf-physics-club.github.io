@@ -52,11 +52,17 @@
     const start = currentPage * perPage;
     const pageGroups = grouped.slice(start, start + perPage);
 
+   function colorFor(title) {
+      if (title === 'General Club Meeting') return '#fc79b0';
+      if (title === 'Weekly Study Group') return '#cafc79';
+      return '#dddddd';
+    }
+
     pageGroups.forEach(group => {
       const li = document.createElement('li');
       let html = `<strong>${formatDate(group[0].date)}</strong><div>`;
       group.forEach(e => {
-        html += `<div class="event-entry">${e.title}<br><small>${e.time} &mdash; ${e.location}</small></div>`;
+        html += `<div class="event-entry"><span class="event-color-dot" style="background-color:${colorFor(e.title)};"></span>${e.title}<br><small>${e.time} &mdash; ${e.location}</small></div>`;
       });
       html += `</div>`;
       li.innerHTML = html;
