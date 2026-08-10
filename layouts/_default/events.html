@@ -10,7 +10,7 @@
     <ul>
       {{ range sort .Site.Data.events "date" }}
       <li>
-        <strong>{{ .date }}</strong><br>
+        <strong>{{ .date | dateFormat "01-02-2006" }}</strong><br>
         {{ .title }}<br>
         <small>{{ .time }} &mdash; {{ .location }}</small>
       </li>
