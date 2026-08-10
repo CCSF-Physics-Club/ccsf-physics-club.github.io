@@ -172,9 +172,13 @@ footer {
   background: #ffffff;
 }
 
+.calendar-grid > div {
+  background: #ffffff;
+}
+
 .calendar-cell.has-event {
-  background: rgba(45, 212, 191, 0.2);
-  color: #0a3d3a;
+  background: rgba(59, 130, 246, 0.15);
+  color: #111111;
   font-weight: 700;
   cursor: pointer;
 }
