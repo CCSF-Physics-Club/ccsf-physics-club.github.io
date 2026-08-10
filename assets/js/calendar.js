@@ -5,6 +5,16 @@ if (typeof events === 'string') {
 
 const calendarEl = document.getElementById('calendar');
 
+function getEventStyle(title) {
+  if (title === 'General Club Meeting') {
+    return { label: 'GA Meeting', color: '#fc79b0' };
+  }
+  if (title === 'Weekly Study Group') {
+    return { label: 'Study Group', color: '#cafc79' };
+  }
+  return { label: title, color: '#dddddd' };
+}
+
 const eventsByDate = {};
 events.forEach(e => {
   if (!eventsByDate[e.date]) {
@@ -69,18 +79,36 @@ function renderCalendar(month, year) {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
   for (let i = 0; i < firstDay; i++) {
-    grid.appendChild(document.createElement('div'));
+    const empty = document.createElement('div');
+    empty.className = 'calendar-cell calendar-cell-empty';
+    grid.appendChild(empty);
   }
 
   for (let day = 1; day <= daysInMonth; day++) {
     const cell = document.createElement('div');
     cell.className = 'calendar-cell';
     const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-    cell.textContent = day;
+
+    const dayNum = document.createElement('div');
+    dayNum.className = 'calendar-day-num';
+    dayNum.textContent = day;
+    cell.appendChild(dayNum);
 
     const dayEvents = eventsByDate[dateStr];
     if (dayEvents) {
       cell.classList.add('has-event');
+      const chips = document.createElement('div');
+      chips.className = 'calendar-chips';
+      dayEvents.forEach((e, i) => {
+        const style = getEventStyle(e.title);
+        const chip = document.createElement('div');
+        chip.className = 'calendar-chip';
+        chip.style.backgroundColor = style.color;
+        chip.textContent = style.label;
+        chips.appendChild(chip);
+      });
+      cell.appendChild(chips);
+
       cell.addEventListener('mouseenter', () => showTooltip(cell, dayEvents));
       cell.addEventListener('mouseleave', hideTooltip);
     }
