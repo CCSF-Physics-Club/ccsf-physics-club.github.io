@@ -12,9 +12,22 @@
 <body>
 
   <header style="text-align: center;">
-    <h1><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+    <div class="header-top">
+      <h1><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
     <p id="live-clock" style="font-size: 0.8rem; letter-spacing: 1px; color: #555555; margin: 0.5rem 0 0;"></p>
     <nav class="nav-grid" style="justify-content: center;">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <a href="{{ "/rules/" | relURL }}">Rules</a>
+      <a href="{{ "/events/" | relURL }}">Events</a>
+      <a href="{{ "/join/" | relURL }}">Join</a>
+    </nav>
+    <nav class="mobile-nav" id="mobile-nav">
       <a href="{{ "/" | relURL }}">Home</a>
       <a href="{{ "/rules/" | relURL }}">Rules</a>
       <a href="{{ "/events/" | relURL }}">Events</a>
@@ -40,7 +53,6 @@
 
     function updateClock() {
       const now = new Date();
-      const options = { timeZone: 'America/Los_Angeles' };
 
       const parts = new Intl.DateTimeFormat('en-US', {
         timeZone: 'America/Los_Angeles',
@@ -70,6 +82,18 @@
 
     updateClock();
     setInterval(updateClock, 1000);
+  })();
+
+  (function() {
+    const toggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (!toggle || !mobileNav) return;
+
+    toggle.addEventListener('click', function() {
+      const isOpen = mobileNav.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
   })();
   </script>
 
