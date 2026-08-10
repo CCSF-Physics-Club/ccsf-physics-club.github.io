@@ -1,0 +1,41 @@
+{{ define "main" }}
+<h2>{{ .Title }}</h2>
+
+<div id="ack-intro">
+  <p>Click below to confirm you've read and agree to follow the <a href="{{ "/rules/" | relURL }}" target="_blank">CCSF Physics Club rules</a>.</p>
+  <p id="ack-name-display"></p>
+  <button id="ack-confirm-btn" class="ack-button">Confirm</button>
+</div>
+
+<div id="ack-thankyou" style="display:none;">
+  <p>Thanks! Your acknowledgment has been recorded.</p>
+</div>
+
+<iframe name="ack_hidden_iframe" id="ack_hidden_iframe" style="display:none;" onload="if(window.ackSubmitted){document.getElementById('ack-intro').style.display='none';document.getElementById('ack-thankyou').style.display='block';}"></iframe>
+
+<form id="ack-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc5H-TLtC35YnNpUmGZmUKOM21FSuxezfcU-B-aGrVGrnyvYg/formResponse" method="POST" target="ack_hidden_iframe" style="display:none;">
+  <input type="text" name="entry.860246298" id="ack-name-field">
+  <input type="text" name="entry.778450654" id="ack-email-field">
+  <input type="checkbox" name="entry.62296229" value="I have read, understood, and agree to follow the CCSF Physics Club rules and expectations." checked>
+</form>
+
+<script>
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get('name') || '';
+  const email = params.get('email') || '';
+
+  document.getElementById('ack-name-field').value = name;
+  document.getElementById('ack-email-field').value = email;
+
+  if (name) {
+    document.getElementById('ack-name-display').textContent = 'Confirming as: ' + name + (email ? ' (' + email + ')' : '');
+  }
+
+  document.getElementById('ack-confirm-btn').addEventListener('click', function() {
+    window.ackSubmitted = true;
+    document.getElementById('ack-form').submit();
+  });
+})();
+</script>
+{{ end }}
