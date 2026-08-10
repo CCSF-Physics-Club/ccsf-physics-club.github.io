@@ -165,16 +165,19 @@ footer {
   min-height: 64px;
   padding: 4px;
   text-align: left;
+  background-color: #ffffff;
 }
 
 .calendar-cell-empty {
   min-height: 64px;
+  background-color: #ffffff;
 }
 
 .calendar-day-num {
-  font-size: 0.75rem;
-  color: #555555;
+  font-size: 0.8rem;
+  color: #111111;
   margin-bottom: 4px;
+  font-weight: 700;
 }
 
 .calendar-cell.has-event {
