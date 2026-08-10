@@ -54,11 +54,11 @@
 
     pageGroups.forEach(group => {
       const li = document.createElement('li');
-      let html = `<strong>${formatDate(group[0].date)}</strong><br>`;
-      group.forEach((e, i) => {
-        html += `${e.title}<br><small>${e.time} &mdash; ${e.location}</small>`;
-        if (i < group.length - 1) html += '<br><br>';
+      let html = `<strong>${formatDate(group[0].date)}</strong><div>`;
+      group.forEach(e => {
+        html += `<div class="event-entry">${e.title}<br><small>${e.time} &mdash; ${e.location}</small></div>`;
       });
+      html += `</div>`;
       li.innerHTML = html;
       list.appendChild(li);
     });

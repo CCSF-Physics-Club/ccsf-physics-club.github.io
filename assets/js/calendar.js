@@ -112,7 +112,15 @@ function renderCalendar(month, year) {
       cell.addEventListener('mouseenter', () => showTooltip(cell, dayEvents));
       cell.addEventListener('mouseleave', hideTooltip);
     }
-    grid.appendChild(cell);
+   grid.appendChild(cell);
+  }
+
+  const totalCells = firstDay + daysInMonth;
+  const trailingEmpty = (7 - (totalCells % 7)) % 7;
+  for (let i = 0; i < trailingEmpty; i++) {
+    const empty = document.createElement('div');
+    empty.className = 'calendar-cell calendar-cell-empty';
+    grid.appendChild(empty);
   }
 
   calendarEl.appendChild(grid);

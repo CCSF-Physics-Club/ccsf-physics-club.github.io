@@ -91,7 +91,7 @@ footer {
 }
 
 .events-calendar {
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto 2.5rem;
 }
 
@@ -108,14 +108,33 @@ footer {
 .events-list-section ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  margin: 0;
+  border: 1px solid #dddddd;
 }
 
 .events-list-section li {
-  padding-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0 1.5rem;
+  padding: 0.9rem 1rem;
   border-bottom: 1px solid #eeeeee;
+}
+
+.events-list-section li:last-child {
+  border-bottom: none;
+}
+
+.events-list-section li strong {
+  font-size: 0.85rem;
+  color: #111111;
+}
+
+.events-list-section li .event-entry {
+  padding-bottom: 0.5rem;
+}
+
+.events-list-section li .event-entry:last-child {
+  padding-bottom: 0;
 }
 
 .calendar-header {
@@ -355,4 +374,48 @@ li {
 .ack-button:hover {
   background: #111111;
   color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  header {
+    padding: 1.5rem 0 1rem;
+  }
+
+  main {
+    padding: 1.5rem 0;
+  }
+
+  .nav-grid {
+    flex-wrap: wrap;
+  }
+
+  .nav-grid a {
+    flex: 1 1 50%;
+    border-bottom: 1px solid #111111;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .events-list-section li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .calendar-chip {
+    font-size: 0.55rem;
+  }
+
+  .calendar-cell {
+    min-height: 54px;
+  }
 }
