@@ -31,9 +31,19 @@
   }
   events.sort((a, b) => a.date.localeCompare(b.date));
 
+  const grouped = [];
+  const byDate = {};
+  events.forEach(e => {
+    if (!byDate[e.date]) {
+      byDate[e.date] = [];
+      grouped.push(byDate[e.date]);
+    }
+    byDate[e.date].push(e);
+  });
+
   const perPage = 3;
   let currentPage = 0;
-  const totalPages = Math.ceil(events.length / perPage);
+  const totalPages = Math.ceil(grouped.length / perPage);
 
   function formatDate(dateStr) {
     const [year, month, day] = dateStr.split('-');
@@ -44,11 +54,16 @@
     const list = document.getElementById('events-list');
     list.innerHTML = '';
     const start = currentPage * perPage;
-    const pageEvents = events.slice(start, start + perPage);
+    const pageGroups = grouped.slice(start, start + perPage);
 
-    pageEvents.forEach(e => {
+    pageGroups.forEach(group => {
       const li = document.createElement('li');
-      li.innerHTML = `<strong>${formatDate(e.date)}</strong><br>${e.title}<br><small>${e.time} &mdash; ${e.location}</small>`;
+      let html = `<strong>${formatDate(group[0].date)}</strong><br>`;
+      group.forEach((e, i) => {
+        html += `${e.title}<br><small>${e.time} &mdash; ${e.location}</small>`;
+        if (i < group.length - 1) html += '<br><br>';
+      });
+      li.innerHTML = html;
       list.appendChild(li);
     });
 
