@@ -177,7 +177,7 @@ footer {
 }
 
 .calendar-cell.has-event {
-  background: rgba(0, 184, 255, 0.06);
+  background: rgba(0, 183, 255, 0.58);
   color: #111111;
   font-weight: 700;
   cursor: pointer;
