@@ -278,3 +278,21 @@ li {
   text-transform: uppercase;
   color: #888888;
 }
+
+.calendar-tooltip {
+  position: absolute;
+  z-index: 100;
+  background: #ffffff;
+  border: 1px solid #111111;
+  padding: 10px 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  max-width: 220px;
+}
+
+.tooltip-event:not(:last-child) {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #111111;
+}

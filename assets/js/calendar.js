@@ -7,12 +7,38 @@ const calendarEl = document.getElementById('calendar');
 
 const eventsByDate = {};
 events.forEach(e => {
-  eventsByDate[e.date] = e;
+  if (!eventsByDate[e.date]) {
+    eventsByDate[e.date] = [];
+  }
+  eventsByDate[e.date].push(e);
 });
 
 const today = new Date();
 let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
+
+let tooltipEl = null;
+
+function showTooltip(cell, dayEvents) {
+  hideTooltip();
+  tooltipEl = document.createElement('div');
+  tooltipEl.className = 'calendar-tooltip';
+  tooltipEl.innerHTML = dayEvents.map(e =>
+    `<div class="tooltip-event"><strong>${e.title}</strong><br>${e.time} &mdash; ${e.location}</div>`
+  ).join('');
+  document.body.appendChild(tooltipEl);
+
+  const rect = cell.getBoundingClientRect();
+  tooltipEl.style.left = `${rect.left + window.scrollX}px`;
+  tooltipEl.style.top = `${rect.bottom + window.scrollY + 6}px`;
+}
+
+function hideTooltip() {
+  if (tooltipEl) {
+    tooltipEl.remove();
+    tooltipEl = null;
+  }
+}
 
 function renderCalendar(month, year) {
   calendarEl.innerHTML = '';
@@ -52,9 +78,11 @@ function renderCalendar(month, year) {
     const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
     cell.textContent = day;
 
-    if (eventsByDate[dateStr]) {
+    const dayEvents = eventsByDate[dateStr];
+    if (dayEvents) {
       cell.classList.add('has-event');
-      cell.title = eventsByDate[dateStr].title;
+      cell.addEventListener('mouseenter', () => showTooltip(cell, dayEvents));
+      cell.addEventListener('mouseleave', hideTooltip);
     }
     grid.appendChild(cell);
   }
@@ -62,11 +90,13 @@ function renderCalendar(month, year) {
   calendarEl.appendChild(grid);
 
   document.getElementById('prevMonth').addEventListener('click', () => {
+    hideTooltip();
     currentMonth--;
     if (currentMonth < 0) { currentMonth = 11; currentYear--; }
     renderCalendar(currentMonth, currentYear);
   });
   document.getElementById('nextMonth').addEventListener('click', () => {
+    hideTooltip();
     currentMonth++;
     if (currentMonth > 11) { currentMonth = 0; currentYear++; }
     renderCalendar(currentMonth, currentYear);
