@@ -7,15 +7,12 @@
 
   <aside class="events-sidebar">
     <h3>Upcoming Events</h3>
-    <ul>
-      {{ range sort .Site.Data.events "date" }}
-      <li>
-        <strong>{{ .date | dateFormat "01-02-2006" }}</strong><br>
-        {{ .title }}<br>
-        <small>{{ .time }} &mdash; {{ .location }}</small>
-      </li>
-      {{ end }}
-    </ul>
+    <ul id="events-list"></ul>
+    <div class="sidebar-nav">
+      <button id="prevEvents">&#8592;</button>
+      <span id="pageIndicator"></span>
+      <button id="nextEvents">&#8594;</button>
+    </div>
   </aside>
 
 </div>
@@ -25,5 +22,57 @@
 </script>
 {{ $calendarJS := resources.Get "js/calendar.js" }}
 <script src="{{ $calendarJS.RelPermalink }}"></script>
+
+<script>
+(function() {
+  let events = JSON.parse(document.getElementById('events-data').textContent);
+  if (typeof events === 'string') {
+    events = JSON.parse(events);
+  }
+  events.sort((a, b) => a.date.localeCompare(b.date));
+
+  const perPage = 3;
+  let currentPage = 0;
+  const totalPages = Math.ceil(events.length / perPage);
+
+  function formatDate(dateStr) {
+    const [year, month, day] = dateStr.split('-');
+    return `${month}-${day}-${year}`;
+  }
+
+  function renderPage() {
+    const list = document.getElementById('events-list');
+    list.innerHTML = '';
+    const start = currentPage * perPage;
+    const pageEvents = events.slice(start, start + perPage);
+
+    pageEvents.forEach(e => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${formatDate(e.date)}</strong><br>${e.title}<br><small>${e.time} &mdash; ${e.location}</small>`;
+      list.appendChild(li);
+    });
+
+    document.getElementById('pageIndicator').textContent = `${currentPage + 1} / ${totalPages}`;
+    document.getElementById('prevEvents').disabled = currentPage === 0;
+    document.getElementById('nextEvents').disabled = currentPage === totalPages - 1;
+  }
+
+  document.getElementById('prevEvents').addEventListener('click', () => {
+    if (currentPage > 0) {
+      currentPage--;
+      renderPage();
+    }
+  });
+
+  document.getElementById('nextEvents').addEventListener('click', () => {
+    if (currentPage < totalPages - 1) {
+      currentPage++;
+      renderPage();
+    }
+  });
+
+  renderPage();
+})();
+</script>
 
 {{ end }}
