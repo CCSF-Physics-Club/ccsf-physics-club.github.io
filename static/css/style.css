@@ -90,38 +90,32 @@ footer {
   color: #888888;
 }
 
-.events-layout {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
 .events-calendar {
-  flex: 2;
-  min-width: 280px;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
 }
 
-.events-sidebar {
-  flex: 1;
-  min-width: 220px;
-  border: 1px solid #111111;
-  padding: 1.25rem;
+.events-list-section {
+  border-top: 1px solid #eeeeee;
+  padding-top: 1.5rem;
 }
 
-.events-sidebar h3 {
+.events-list-section h3 {
   color: #111111;
+  margin: 0 0 1rem;
 }
 
-.events-sidebar ul {
+.events-list-section ul {
   list-style: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
-.events-sidebar li {
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid #111111;
+.events-list-section li {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .calendar-header {
