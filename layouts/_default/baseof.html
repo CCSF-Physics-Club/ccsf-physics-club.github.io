@@ -6,14 +6,15 @@
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
 
-  <header>
+  <header style="text-align: center;">
     <h1><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
-    <nav class="nav-grid">
+    <p id="live-clock" style="font-size: 0.8rem; letter-spacing: 1px; color: #555555; margin: 0.5rem 0 0;"></p>
+    <nav class="nav-grid" style="justify-content: center;">
       <a href="{{ "/" | relURL }}">Home</a>
       <a href="{{ "/rules/" | relURL }}">Rules</a>
       <a href="{{ "/events/" | relURL }}">Events</a>
@@ -28,6 +29,49 @@
   <footer>
     <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
   </footer>
+
+  <script>
+  (function() {
+    function ordinal(n) {
+      const s = ["th", "st", "nd", "rd"];
+      const v = n % 100;
+      return n + (s[(v - 20) % 10] || s[v] || s[0]);
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'America/Los_Angeles' };
+
+      const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Los_Angeles',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      }).formatToParts(now);
+
+      const map = {};
+      parts.forEach(p => map[p.type] = p.value);
+
+      const dayNum = parseInt(map.day, 10);
+      const dayText = ordinal(dayNum);
+      const monthText = map.month;
+      const yearText = map.year;
+      const timeText = `${map.hour}:${map.minute}:${map.second} ${map.dayPeriod}`;
+
+      const el = document.getElementById('live-clock');
+      if (el) {
+        el.textContent = `Today is the ${dayText} day of ${monthText}, ${yearText} and it is ${timeText}`;
+      }
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  })();
+  </script>
 
 </body>
 </html>
