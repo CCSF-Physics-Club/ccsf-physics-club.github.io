@@ -12,6 +12,9 @@ function getEventStyle(title) {
   if (title === 'Weekly Study Group') {
     return { label: 'Study Group', color: '#cafc79' };
   }
+  if (title === 'Unity Day') {
+    return { label: 'Unity Day', color: '#e02e2d' };
+  }
   return { label: title, color: '#dddddd' };
 }
 
