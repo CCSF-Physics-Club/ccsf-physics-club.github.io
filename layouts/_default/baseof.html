@@ -74,9 +74,9 @@
       const yearText = map.year;
       const timeText = `${map.hour}:${map.minute}:${map.second} ${map.dayPeriod}`;
 
-      const el = document.getElementById('live-clock');
+     const el = document.getElementById('live-clock');
       if (el) {
-        el.textContent = `Today is the ${dayText} day of ${monthText}, ${yearText} and it is ${timeText}`;
+        el.innerHTML = `Today is ${monthText} ${dayText}, ${yearText}.<br>It is ${timeText}.`;
       }
     }
 
