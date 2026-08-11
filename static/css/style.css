@@ -506,3 +506,8 @@ li {
     border-bottom: none;
   }
 }
+
+
+.page-content li {
+  font-size: 0.9rem;
+}
