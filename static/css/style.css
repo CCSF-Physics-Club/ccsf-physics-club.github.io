@@ -12,6 +12,7 @@ body {
   color: #111111;
   line-height: 1.8;
   letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
 h1, h2, h3 {
