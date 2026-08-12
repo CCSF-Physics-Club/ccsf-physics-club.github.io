@@ -5,28 +5,30 @@
 <div class="form-embed">
 <form action="https://docs.google.com/forms/d/e/1FAIpQLSer0NmHzUKGomBd5tJPxseOlMcALrbNORm4KGzDBSmdxYW6XQ/formResponse" method="POST" target="hidden_iframe" id="join-form" class="join-form">
 
-<label for="emailAddress">Email *</label>
-<input type="email" name="emailAddress" id="emailAddress" required>
+    <label for="emailAddress">Email *</label>
+    <input type="email" name="emailAddress" id="emailAddress" required>
 
-<label for="entry.2005620554">First &amp; Last Name *</label>
-<input type="text" name="entry.2005620554" id="entry.2005620554" required>
+    <label for="entry.2005620554">First &amp; Last Name *</label>
+    <input type="text" name="entry.2005620554" id="entry.2005620554" required>
 
-<label for="entry.1065046570">CCSF Student ID *</label>
-<input type="text" name="entry.1065046570" id="entry.1065046570" required>
+    <label for="entry.1065046570">CCSF Student ID *</label>
+    <input type="text" name="entry.1065046570" id="entry.1065046570" required>
 
-<label for="entry.1166974658">Major *</label>
-<input type="text" name="entry.1166974658" id="entry.1166974658" required>
+    <label for="entry.1166974658">Major *</label>
+    <input type="text" name="entry.1166974658" id="entry.1166974658" required>
 
-<label class="checkbox-label">
-<input type="checkbox" name="entry.1591811940" value="I have read, understood, and agree to follow the CCSF Physics Club rules and expectations." required>
-<span>I have read, understood, and agree to follow the <a href="{{ "/rules/" | relURL }}" target="_blank">CCSF Physics Club rules</a> and expectations. *</span>
-</label>
+    <label class="checkbox-label">
+      <input type="checkbox" name="entry.1591811940" value="I have read, understood, and agree to follow the CCSF Physics Club rules and expectations." required>
+      <span>I have read, understood, and agree to follow the <a href="{{ "/rules/" | relURL }}" target="_blank">CCSF Physics Club rules</a> and expectations. *</span>
+    </label>
 
-<label for="entry.839337160">Comments/Questions?</label>
-<textarea name="entry.839337160" id="entry.839337160" rows="3"></textarea>
+    <label for="entry.839337160">Comments/Questions?</label>
+    <textarea name="entry.839337160" id="entry.839337160" rows="3"></textarea>
 
-<button type="submit">Submit</button>
-</form>
+    <input type="hidden" name="fvv" value="1">
+
+    <button type="submit">Submit</button>
+  </form>
 
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(window.formSubmitted){document.getElementById('join-form').style.display='none';document.getElementById('thank-you').style.display='block';}"></iframe>
 
