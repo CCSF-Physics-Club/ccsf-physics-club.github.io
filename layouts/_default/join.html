@@ -3,7 +3,7 @@
 <p>Fill out the form below to join the Physics Club! You'll also be added to our newsletter list.</p>
 
 <div class="form-embed">
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSer0NmHzUKGomBd5tJPxseOlMcALrbNORm4KGzDBSmdxYW6XQ/formResponse" method="POST" target="hidden_iframe" id="join-form" class="join-form">
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSer0NmHzUKGomBd5tJPxseOlMcALrbNORm4KGzDBSmdxYW6XQ/formResponse" method="POST" target="hidden_iframe" id="join-form" class="join-form">
 
     <label for="emailAddress">Email *</label>
     <input type="email" name="emailAddress" id="emailAddress" required>
@@ -30,16 +30,19 @@
     <button type="submit">Submit</button>
   </form>
 
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(window.formSubmitted){document.getElementById('join-form').style.display='none';document.getElementById('thank-you').style.display='block';}"></iframe>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(window.formSubmitted){document.getElementById('join-form').style.display='none';document.getElementById('thank-you').style.display='block';}"></iframe>
 
-<div id="thank-you" style="display:none;">
-<p>Thanks for joining! We've received your info.</p>
-</div>
+  <div id="thank-you" style="display:none;">
+    <p>Thanks for joining!</p>
+    <p>Keep an eye on your inbox for a welcome email with more information about the club.</p>
+    <a href="https://discord.gg/mG9ZE8fSUT" target="_blank" class="ack-button">Join our Discord here</a>
+    <p>See you soon!</p>
+  </div>
 </div>
 
 <script>
 document.getElementById('join-form').addEventListener('submit', function() {
-window.formSubmitted = true;
+  window.formSubmitted = true;
 });
 </script>
 {{ end }}
