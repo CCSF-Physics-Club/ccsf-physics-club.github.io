@@ -87,9 +87,15 @@ function renderCalendar(month, year) {
     grid.appendChild(empty);
   }
 
+const isCurrentMonth = (month === today.getMonth() && year === today.getFullYear());
+  const todayDate = today.getDate();
+
   for (let day = 1; day <= daysInMonth; day++) {
     const cell = document.createElement('div');
     cell.className = 'calendar-cell';
+    if (isCurrentMonth && day === todayDate) {
+      cell.classList.add('is-today');
+    }
     const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
 
     const dayNum = document.createElement('div');

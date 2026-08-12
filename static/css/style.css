@@ -511,3 +511,11 @@ li {
 .page-content li {
   font-size: 15px;
 }
+
+.calendar-cell.is-today {
+  border: 1px solid #111111;
+}
+
+.calendar-cell.is-today .calendar-day-num {
+  font-weight: 700;
+}
