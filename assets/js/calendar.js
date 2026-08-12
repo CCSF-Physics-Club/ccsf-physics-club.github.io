@@ -98,9 +98,13 @@ const isCurrentMonth = (month === today.getMonth() && year === today.getFullYear
     }
     const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
 
-    const dayNum = document.createElement('div');
+  const dayNum = document.createElement('div');
     dayNum.className = 'calendar-day-num';
-    dayNum.textContent = day;
+    if (isCurrentMonth && day === todayDate) {
+      dayNum.innerHTML = day + ' <span class="today-label">Today</span>';
+    } else {
+      dayNum.textContent = day;
+    }
     cell.appendChild(dayNum);
 
     const dayEvents = eventsByDate[dateStr];

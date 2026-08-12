@@ -519,3 +519,10 @@ li {
 .calendar-cell.is-today .calendar-day-num {
   font-weight: 700;
 }
+
+.today-label {
+  font-size: 0.55rem;
+  letter-spacing: 0.5px;
+  color: #111111;
+  font-weight: 700;
+}
