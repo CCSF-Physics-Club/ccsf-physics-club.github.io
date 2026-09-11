@@ -1,20 +1,8 @@
-- title: "General Club Meeting"
-  date: 2026-09-08
-  time: "2:00 PM - 2:30 PM"
-  location: "Room 204"
-  description: "General meeting open to all members."
-
-- title: "Weekly Study Group"
-  date: 2026-09-08
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
-
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-09-15
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "SCIE TBD"
+  description: "Join us for our weekly study session."
 
 - title: "General Club Meeting"
   date: 2026-09-22
@@ -22,17 +10,17 @@
   location: "Room 204"
   description: "General meeting open to all members."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-09-22
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-09-29
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
 - title: "General Club Meeting"
   date: 2026-10-06
@@ -40,23 +28,23 @@
   location: "Room 204"
   description: "General meeting open to all members."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-10-06
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
 - title: "Unity Day"
-  date: 2026-10-12
-  time: "10:00 AM - 2:00 PM"
+  date: 2026-10-14
+  time: "10:00 AM - 1:00 PM"
   location: "Ram Plaza, Ocean Campus"
   description: "Join us at Unity Day on Ram Plaza."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-10-13
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
 - title: "General Club Meeting"
   date: 2026-10-20
@@ -64,17 +52,17 @@
   location: "Room 204"
   description: "General meeting open to all members."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-10-20
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-10-27
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
 - title: "General Club Meeting"
   date: 2026-11-03
@@ -82,17 +70,17 @@
   location: "Room 204"
   description: "General meeting open to all members."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-11-03
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-11-10
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
 - title: "General Club Meeting"
   date: 2026-11-17
@@ -100,17 +88,17 @@
   location: "Room 204"
   description: "General meeting open to all members."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-11-17
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-11-24
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
 - title: "General Club Meeting"
   date: 2026-12-01
@@ -118,17 +106,17 @@
   location: "Room 204"
   description: "General meeting open to all members."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-12-01
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-12-08
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
 
 - title: "General Club Meeting"
   date: 2026-12-15
@@ -136,8 +124,8 @@
   location: "Room 204"
   description: "General meeting open to all members."
 
-- title: "Weekly Study Group"
+- title: "Weekly Study Session"
   date: 2026-12-15
-  time: "2:00 PM - 4:00 PM"
-  location: "Room 204"
-  description: "Join us for our weekly study group."
+  time: "1:00 PM - 4:00 PM"
+  location: "Location TBD"
+  description: "Join us for our weekly study session."
