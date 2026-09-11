@@ -9,7 +9,7 @@ function getEventStyle(title) {
   if (title === 'General Club Meeting') {
     return { label: 'GA Meeting', color: '#fc79b0' };
   }
-  if (title === 'Weekly Study Session') {
+  if (title === 'Weekly Study Session' || title === 'First Weekly Study Session') {
     return { label: 'Study Group', color: '#cafc79' };
   }
   if (title === 'Unity Day') {
