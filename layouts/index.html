@@ -6,4 +6,43 @@
   </div>
 
   {{ .Content }}
+
+  <div id="home-next-event" class="home-next-event"></div>
+
+  <script id="home-events-data" type="application/json">
+    {{ .Site.Data.events | jsonify }}
+  </script>
+  <script>
+  (function() {
+    let events = JSON.parse(document.getElementById('home-events-data').textContent);
+    if (typeof events === 'string') {
+      events = JSON.parse(events);
+    }
+
+    const todayStr = new Date().toISOString().split('T')[0];
+    const upcoming = events
+      .filter(e => e.date >= todayStr)
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    const container = document.getElementById('home-next-event');
+    if (upcoming.length === 0) {
+      container.style.display = 'none';
+      return;
+    }
+
+    const next = upcoming[0];
+    const [year, month, day] = next.date.split('-');
+    const formattedDate = `${month}-${day}-${year}`;
+
+    container.innerHTML = `
+      <div class="home-next-event-label">Upcoming Event</div>
+      <div class="home-next-event-box">
+        <strong>${formattedDate}</strong><br>
+        ${next.title}<br>
+        <small>${next.time} &mdash; ${next.location}</small>
+      </div>
+      <a href="/events/" class="home-events-link">See Full Event Calendar &rarr;</a>
+    `;
+  })();
+  </script>
 {{ end }}

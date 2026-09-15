@@ -514,3 +514,32 @@ li {
   color: #111111;
   font-weight: 700;
 }
+
+.home-next-event {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #111111;
+  text-align: center;
+}
+
+.home-next-event-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #111111;
+  margin-bottom: 0.75rem;
+}
+
+.home-next-event-box {
+  display: inline-block;
+  border: 1px solid #111111;
+  padding: 16px 24px;
+  margin-bottom: 1rem;
+}
+
+.home-events-link {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #111111;
+  text-decoration: underline;
+}
