@@ -530,8 +530,12 @@ li {
 }
 
 .home-next-event-box {
-  display: inline-block;
-  border: 1px solid #111111;
+  display: block;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
   padding: 16px 24px;
   margin-bottom: 1rem;
 }
