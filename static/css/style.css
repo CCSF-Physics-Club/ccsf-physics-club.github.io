@@ -551,3 +551,24 @@ li {
 main p {
   text-align: center;
 }
+
+.past-events-section {
+  border-top: none;
+  padding-top: 0;
+}
+
+.past-toggle {
+  background: none;
+  border: 1px solid #111111;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: #111111;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.past-toggle:hover {
+  background: #111111;
+  color: #ffffff;
+}

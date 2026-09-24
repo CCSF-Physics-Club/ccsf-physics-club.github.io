@@ -13,6 +13,19 @@
   </div>
 </div>
 
+<div class="events-list-section past-events-section">
+  <button id="pastToggle" class="past-toggle">Show Past Events &#9662;</button>
+  <div id="pastEventsWrap" style="display:none;">
+    <h3>Past Events</h3>
+    <ul id="past-events-list"></ul>
+    <div class="sidebar-nav">
+      <button id="prevPastEvents">&#8592;</button>
+      <span id="pastPageIndicator"></span>
+      <button id="nextPastEvents">&#8594;</button>
+    </div>
+  </div>
+</div>
+
 <script id="events-data" type="application/json">
   {{ .Site.Data.events | jsonify }}
 </script>
@@ -27,69 +40,93 @@
   }
   events.sort((a, b) => a.date.localeCompare(b.date));
 
-  const grouped = [];
-  const byDate = {};
-  events.forEach(e => {
-    if (!byDate[e.date]) {
-      byDate[e.date] = [];
-      grouped.push(byDate[e.date]);
-    }
-    byDate[e.date].push(e);
-  });
+  const todayStr = new Date().toISOString().split('T')[0];
 
-  const perPage = 3;
-  let currentPage = 0;
-  const totalPages = Math.ceil(grouped.length / perPage);
+  function colorFor(title) {
+    if (title === 'General Club Meeting') return '#fc79b0';
+    if (title === 'Weekly Study Group' || title === 'First Weekly Study Group') return '#cafc79';
+    if (title === 'Unity Day') return '#e02e2d';
+    return '#dddddd';
+  }
 
   function formatDate(dateStr) {
     const [year, month, day] = dateStr.split('-');
     return `${month}-${day}-${year}`;
   }
 
-  function renderPage() {
-    const list = document.getElementById('events-list');
-    list.innerHTML = '';
-    const start = currentPage * perPage;
-    const pageGroups = grouped.slice(start, start + perPage);
-
-   function colorFor(title) {
-      if (title === 'General Club Meeting') return '#fc79b0';
-      if (title === 'Weekly Study Group' || title === 'First Weekly Study Group') return '#cafc79';
-      if (title === 'Unity Day') return '#e02e2d';
-      return '#dddddd';
-    }
-
-    pageGroups.forEach(group => {
-      const li = document.createElement('li');
-      let html = `<strong>${formatDate(group[0].date)}</strong><div>`;
-      group.forEach(e => {
-        html += `<div class="event-entry"><span class="event-color-dot" style="background-color:${colorFor(e.title)};"></span>${e.title}<br><small>${e.time} &mdash; ${e.location}</small></div>`;
-      });
-      html += `</div>`;
-      li.innerHTML = html;
-      list.appendChild(li);
+  function groupByDate(list) {
+    const grouped = [];
+    const byDate = {};
+    list.forEach(e => {
+      if (!byDate[e.date]) {
+        byDate[e.date] = [];
+        grouped.push(byDate[e.date]);
+      }
+      byDate[e.date].push(e);
     });
-
-    document.getElementById('pageIndicator').textContent = `${currentPage + 1} / ${totalPages}`;
-    document.getElementById('prevEvents').disabled = currentPage === 0;
-    document.getElementById('nextEvents').disabled = currentPage === totalPages - 1;
+    return grouped;
   }
 
-  document.getElementById('prevEvents').addEventListener('click', () => {
-    if (currentPage > 0) {
-      currentPage--;
-      renderPage();
-    }
-  });
+  function makePaginator(listElId, prevId, nextId, indicatorId, grouped) {
+    const perPage = 3;
+    let currentPage = 0;
+    const totalPages = Math.max(1, Math.ceil(grouped.length / perPage));
 
-  document.getElementById('nextEvents').addEventListener('click', () => {
-    if (currentPage < totalPages - 1) {
-      currentPage++;
-      renderPage();
-    }
-  });
+    function renderPage() {
+      const list = document.getElementById(listElId);
+      list.innerHTML = '';
+      const start = currentPage * perPage;
+      const pageGroups = grouped.slice(start, start + perPage);
 
-  renderPage();
+      pageGroups.forEach(group => {
+        const li = document.createElement('li');
+        let html = `<strong>${formatDate(group[0].date)}</strong><div>`;
+        group.forEach(e => {
+          html += `<div class="event-entry"><span class="event-color-dot" style="background-color:${colorFor(e.title)};"></span>${e.title}<br><small>${e.time} &mdash; ${e.location}</small></div>`;
+        });
+        html += `</div>`;
+        li.innerHTML = html;
+        list.appendChild(li);
+      });
+
+      document.getElementById(indicatorId).textContent = `${currentPage + 1} / ${totalPages}`;
+      document.getElementById(prevId).disabled = currentPage === 0;
+      document.getElementById(nextId).disabled = currentPage >= totalPages - 1;
+    }
+
+    document.getElementById(prevId).addEventListener('click', () => {
+      if (currentPage > 0) {
+        currentPage--;
+        renderPage();
+      }
+    });
+
+    document.getElementById(nextId).addEventListener('click', () => {
+      if (currentPage < totalPages - 1) {
+        currentPage++;
+        renderPage();
+      }
+    });
+
+    renderPage();
+  }
+
+  const upcomingEvents = events.filter(e => e.date >= todayStr);
+  const pastEvents = events.filter(e => e.date < todayStr).reverse();
+
+  const upcomingGrouped = groupByDate(upcomingEvents);
+  const pastGrouped = groupByDate(pastEvents);
+
+  makePaginator('events-list', 'prevEvents', 'nextEvents', 'pageIndicator', upcomingGrouped);
+  makePaginator('past-events-list', 'prevPastEvents', 'nextPastEvents', 'pastPageIndicator', pastGrouped);
+
+  const toggle = document.getElementById('pastToggle');
+  const wrap = document.getElementById('pastEventsWrap');
+  toggle.addEventListener('click', () => {
+    const isOpen = wrap.style.display !== 'none';
+    wrap.style.display = isOpen ? 'none' : 'block';
+    toggle.innerHTML = isOpen ? 'Show Past Events &#9662;' : 'Hide Past Events &#9652;';
+  });
 })();
 </script>
 
