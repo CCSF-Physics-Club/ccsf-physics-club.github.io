@@ -548,9 +548,6 @@ li {
   text-decoration: underline;
 }
 
-main p {
-  text-align: center;
-}
 
 .past-events-section {
   border-top: none;
@@ -571,4 +568,8 @@ main p {
 .past-toggle:hover {
   background: #111111;
   color: #ffffff;
+}
+
+.home-content p {
+  text-align: center;
 }
