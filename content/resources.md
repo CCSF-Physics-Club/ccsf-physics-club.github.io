@@ -42,7 +42,7 @@ layout: "resources"
   <div class="event-preview-caption">
     Join other PC members in visiting<br>
     the SFSU Observatory!<br><br>
-    This event is open to the public and requires no RSVP.<br><br>
+    This event is open to the public and requires no RSVP. Click on the flyer for more details and how to get there.<br><br>
     Coordinate with other PC members on <a href="https://discord.gg/mG9ZE8fSUT">Discord</a> :)
   </div>
 </div>
