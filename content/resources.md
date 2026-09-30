@@ -2,7 +2,7 @@
 title: "Resources"
 ---
 
-### Academic Support
+
 
 **STAR Tutoring**
 
