@@ -31,7 +31,8 @@ h2 {
 }
 
 h3 {
-  font-size: 0.85rem;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: #111111;
 }
 
@@ -572,4 +573,39 @@ li {
 
 .home-content p {
   text-align: center;
+}
+
+.page-content h3 {
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #111111;
+}
+
+.page-content h3:first-child {
+  margin-top: 0;
+}
+
+.page-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.page-content ul li {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 1.5rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.page-content ul li:last-child {
+  border-bottom: none;
+}
+
+.page-content ul li::before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  font-size: 0.8rem;
+  color: #111111;
 }
