@@ -9,6 +9,12 @@ layout: "resources"
 
 ### Research at UC Campuses
 
-- [UC Davis](https://physics.ucdavis.edu/research/research-areas)
-- [UC Santa Cruz](https://physics.ucsc.edu/research/)
 - [UC Berkeley](https://physics.berkeley.edu/research-faculty)
+- [UC Davis](https://physics.ucdavis.edu/research/research-areas)
+- [UC Irvine](https://www.physics.uci.edu/research)
+- [UC Los Angeles](https://www.pa.ucla.edu/research.html)
+- [UC Merced](https://physics.ucmerced.edu/research1)
+- [UC Riverside](https://www.physics.ucr.edu/research)
+- [UC Santa Barbara](https://www.physics.ucsb.edu/research)
+- [UC Santa Cruz](https://physics.ucsc.edu/research/)
+- [UC San Diego](https://physics.ucsd.edu/research)
