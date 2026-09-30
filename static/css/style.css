@@ -641,6 +641,7 @@ li {
   flex: 0 1 340px;
   min-width: 280px;
   font-size: 1rem;
+  margin-left: 30px;
   line-height: 1.6;
   color: #111111;
 }
