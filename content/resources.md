@@ -23,7 +23,7 @@ layout: "resources"
 
 [![LBNL event flyer](/images/lbnl-flyer.png)](https://docs.google.com/forms/d/e/1FAIpQLSd27Y-6Gla-6Ev2QpAv5s6zXM8q3_ggQDqoXm_oOTME7W_EFw/viewform)
 
-Tap the flyer to RSVP, and feel free to mention CCSF Physics Club under "How did you hear about this event/opportunity?" (optional).
+Tap the flyer to RSVP, and feel free to mention CCSF Physics Club under "How did you hear about this event/opportunity?"
 
 ![SFSU Observatory](/images/sfsu-obs.png)
 

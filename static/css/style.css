@@ -618,3 +618,11 @@ li {
   margin: 0 auto 0.5rem;
   border: 1px solid #111111;
 }
+
+.page-content p:nth-of-type(4n+2) {
+  text-align: left;
+}
+
+.page-content p:nth-of-type(4n) {
+  text-align: right;
+}
