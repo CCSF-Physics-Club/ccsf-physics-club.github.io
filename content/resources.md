@@ -22,3 +22,9 @@ layout: "resources"
 ### Campus Events & Partnerships
 
 [![LBNL event flyer](/images/lbnl-flyer.png)](https://docs.google.com/forms/d/e/1FAIpQLSd27Y-6Gla-6Ev2QpAv5s6zXM8q3_ggQDqoXm_oOTME7W_EFw/viewform)
+
+Tap the flyer for details and to sign up.
+
+![SFSU Observatory](/images/sfsu-obs.png)
+
+Interested in joining a visit to the SFSU Observatory? Coordinate with other members on [Discord](https://discord.gg/mG9ZE8fSUT).

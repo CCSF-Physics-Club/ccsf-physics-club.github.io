@@ -610,3 +610,11 @@ li {
   font-size: 0.8rem;
   color: #111111;
 }
+
+.page-content img {
+  display: block;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto 0.5rem;
+  border: 1px solid #111111;
+}
