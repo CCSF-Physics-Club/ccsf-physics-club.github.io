@@ -23,8 +23,8 @@ layout: "resources"
 
 [![LBNL event flyer](/images/lbnl-flyer.png)](https://docs.google.com/forms/d/e/1FAIpQLSd27Y-6Gla-6Ev2QpAv5s6zXM8q3_ggQDqoXm_oOTME7W_EFw/viewform)
 
-Tap the flyer for details and to sign up.
+Tap the flyer to RSVP, and feel free to mention CCSF Physics Club under "How did you hear about this event/opportunity?" (optional).
 
 ![SFSU Observatory](/images/sfsu-obs.png)
 
-Interested in joining a visit to the SFSU Observatory? Coordinate with other members on [Discord](https://discord.gg/mG9ZE8fSUT).
+Join other PC members in visiting the SFSU Observatory this fall! This event is open to all &mdash; coordinate with others on [Discord](https://discord.gg/mG9ZE8fSUT).
