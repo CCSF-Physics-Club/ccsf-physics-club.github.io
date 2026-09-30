@@ -36,10 +36,13 @@ layout: "resources"
 <div class="event-divider">・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.</div>
 
 <div class="event-preview event-preview-reverse">
-  <img src="/images/sfsu-obs.png" alt="SFSU Observatory">
+  <a href="https://physics.sfsu.edu/observatory">
+    <img src="/images/sfsu-obs.png" alt="SFSU Observatory">
+  </a>
   <div class="event-preview-caption">
     Join other PC members in visiting<br>
-    the SFSU Observatory this fall!<br>
-    This event is open to the public, coordinate with others on <a href="https://discord.gg/mG9ZE8fSUT">Discord</a>.
+    the SFSU Observatory!<br><br>
+    This event is open to the public and requires no RSVP.<br><br>
+    Coordinate with other PC members on <a href="https://discord.gg/mG9ZE8fSUT">Discord</a> &#9786;
   </div>
 </div>
