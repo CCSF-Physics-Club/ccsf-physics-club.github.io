@@ -13,7 +13,10 @@
 
   <header style="text-align: center;">
     <div class="header-top">
-      <h1><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
+      <div class="header-title-row">
+        <img src="{{ "images/ccsf-atom-logo.PNG" | relURL }}" alt="CCSF Physics Club logo" class="header-logo">
+        <h1><a href="{{ "/" | relURL }}">Physics Club</a></h1>
+      </div>
       <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -21,7 +24,7 @@
       </button>
     </div>
     <p id="live-clock" style="font-size: 0.8rem; letter-spacing: 1px; color: #111111; margin: 0.5rem 0 0;"></p>
-<nav class="nav-grid" style="justify-content: center;">
+    <nav class="nav-grid" style="justify-content: center;">
       <a href="{{ "/" | relURL }}">Home</a>
       <a href="{{ "/events/" | relURL }}">Events</a>
       <a href="{{ "/resources/" | relURL }}">Resources</a>
@@ -31,6 +34,7 @@
     <nav class="mobile-nav" id="mobile-nav">
       <a href="{{ "/" | relURL }}">Home</a>
       <a href="{{ "/events/" | relURL }}">Events</a>
+      <a href="{{ "/resources/" | relURL }}">Resources</a>
       <a href="{{ "/join/" | relURL }}">Join</a>
       <a href="{{ "/about/" | relURL }}">About</a>
     </nav>
@@ -59,11 +63,7 @@
         timeZone: 'America/Los_Angeles',
         year: 'numeric',
         month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true
+        day: 'numeric'
       }).formatToParts(now);
 
       const map = {};
@@ -73,16 +73,15 @@
       const dayText = ordinal(dayNum);
       const monthText = map.month;
       const yearText = map.year;
-      const timeText = `${map.hour}:${map.minute}:${map.second} ${map.dayPeriod}`;
 
-     const el = document.getElementById('live-clock');
+      const el = document.getElementById('live-clock');
       if (el) {
-        el.innerHTML = `Today is ${monthText} ${dayText}, ${yearText}<br>It is ${timeText}`;
+        el.textContent = `Today is ${monthText} ${dayText}, ${yearText}.`;
       }
     }
 
     updateClock();
-    setInterval(updateClock, 1000);
+    setInterval(updateClock, 60000);
   })();
 
   (function() {

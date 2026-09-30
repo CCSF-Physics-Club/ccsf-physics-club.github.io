@@ -662,3 +662,16 @@ li {
   margin: 1.5rem 0;
   word-break: break-all;
 }
+
+.header-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.header-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
