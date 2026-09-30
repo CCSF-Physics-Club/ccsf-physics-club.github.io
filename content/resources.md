@@ -18,3 +18,7 @@ layout: "resources"
 - [UC Santa Barbara](https://www.physics.ucsb.edu/research)
 - [UC Santa Cruz](https://physics.ucsc.edu/research/)
 - [UC San Diego](https://physics.ucsd.edu/research)
+
+### Campus Events & Partnerships
+
+[![LBNL event flyer](/images/lbnl-flyer.png)](https://docs.google.com/forms/d/e/1FAIpQLSd27Y-6Gla-6Ev2QpAv5s6zXM8q3_ggQDqoXm_oOTME7W_EFw/viewform)
