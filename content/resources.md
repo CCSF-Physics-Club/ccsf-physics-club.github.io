@@ -23,7 +23,10 @@ layout: "resources"
 
 <div class="event-preview">
   <div class="event-preview-caption">
-    Tap the flyer to RSVP, and feel free to mention CCSF Physics Club under "How did you hear about this event/opportunity?"
+    Tap the flyer to RSVP!<br><br>
+    Also, feel free to mention CCSF<br>
+    Physics Club under:<br>
+    "How did you hear about this event/opportunity?"
   </div>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSd27Y-6Gla-6Ev2QpAv5s6zXM8q3_ggQDqoXm_oOTME7W_EFw/viewform">
     <img src="/images/lbnl-flyer.png" alt="LBNL event flyer">
@@ -33,6 +36,8 @@ layout: "resources"
 <div class="event-preview event-preview-reverse">
   <img src="/images/sfsu-obs.png" alt="SFSU Observatory">
   <div class="event-preview-caption">
-    Join other PC members in visiting the SFSU Observatory this fall! This event is open to all &mdash; coordinate with others on <a href="https://discord.gg/mG9ZE8fSUT">Discord</a>.
+    Join other PC members in visiting<br>
+    the SFSU Observatory this fall!<br>
+    This event is open to the public, coordinate with others on <a href="https://discord.gg/mG9ZE8fSUT">Discord</a>.
   </div>
 </div>
