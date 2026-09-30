@@ -77,7 +77,8 @@ main {
 }
 
 a {
-  color: #2255cc;
+  color: #111111;
+  text-decoration: underline;
 }
 
 footer {

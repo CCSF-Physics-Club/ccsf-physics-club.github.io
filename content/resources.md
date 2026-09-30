@@ -1,5 +1,6 @@
 ---
 title: "Resources"
+layout: "resources"
 ---
 
 ### Academic Support
