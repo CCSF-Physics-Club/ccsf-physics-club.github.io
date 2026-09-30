@@ -33,6 +33,8 @@ layout: "resources"
   </a>
 </div>
 
+<div class="event-divider">・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.</div>
+
 <div class="event-preview event-preview-reverse">
   <img src="/images/sfsu-obs.png" alt="SFSU Observatory">
   <div class="event-preview-caption">

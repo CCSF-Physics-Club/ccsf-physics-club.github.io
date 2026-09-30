@@ -653,3 +653,12 @@ li {
     align-items: flex-start;
   }
 }
+
+.event-divider {
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #111111;
+  margin: 1.5rem 0;
+  word-break: break-all;
+}
