@@ -15,6 +15,9 @@ function getEventStyle(title) {
   if (title === 'Unity Day') {
     return { label: 'Unity Day', color: '#e02e2d' };
   }
+  if (title === 'Robert Ferguson Observatory Camping Trip') {
+    return { label: 'RFO Camping', color: '#b9a7ff' };
+  }
   return { label: title, color: '#dddddd' };
 }
 

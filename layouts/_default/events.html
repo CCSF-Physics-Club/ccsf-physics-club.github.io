@@ -46,6 +46,7 @@
     if (title === 'General Club Meeting') return '#fc79b0';
     if (title === 'Weekly Study Group' || title === 'First Weekly Study Group') return '#cafc79';
     if (title === 'Unity Day') return '#e02e2d';
+  if (title === 'Robert Ferguson Observatory Camping Trip') return '#b9a7ff';
     return '#dddddd';
   }
 
@@ -82,7 +83,7 @@
         const li = document.createElement('li');
         let html = `<strong>${formatDate(group[0].date)}</strong><div>`;
         group.forEach(e => {
-          html += `<div class="event-entry"><span class="event-color-dot" style="background-color:${colorFor(e.title)};"></span>${e.title}<br><small>${e.time} &mdash; ${e.location}</small></div>`;
+          html += `<div class="event-entry"><span class="event-color-dot" style="background-color:${colorFor(e.title)};"></span>${e.title}<br><small>${e.time} &mdash; ${e.location}</small>${e.link ? `<br><a href="${e.link}" target="_blank" class="event-link">Interest form &rarr;</a>` : ""}</div>`;
         });
         html += `</div>`;
         li.innerHTML = html;

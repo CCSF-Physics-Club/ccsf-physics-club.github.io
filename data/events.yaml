@@ -129,3 +129,17 @@
   time: "1:30 PM - 4:30 PM"
   location: "HBB 398"
   description: "Join us for our weekly study session."
+
+- title: "Robert Ferguson Observatory Camping Trip"
+  date: 2026-11-28
+  time: "Starts 6:30 PM"
+  location: "Robert Ferguson Observatory"
+  description: "Overnight camping trip at the Robert Ferguson Observatory."
+  link: "https://docs.google.com/forms/d/e/1FAIpQLScRQ9Z8Bf_IGekF_-3U_tzjJXkDEZ-AsvE-2RTFLoUoMYC1mw/viewform?usp=header"
+
+- title: "Robert Ferguson Observatory Camping Trip"
+  date: 2026-11-29
+  time: "Check-out 12:00 PM"
+  location: "Robert Ferguson Observatory"
+  description: "Overnight camping trip at the Robert Ferguson Observatory."
+  link: "https://docs.google.com/forms/d/e/1FAIpQLScRQ9Z8Bf_IGekF_-3U_tzjJXkDEZ-AsvE-2RTFLoUoMYC1mw/viewform?usp=header"
