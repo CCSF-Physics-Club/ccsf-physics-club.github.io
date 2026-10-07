@@ -19,7 +19,7 @@ layout: "resources"
 - [UC Santa Cruz](https://physics.ucsc.edu/research/)
 - [UC San Diego](https://physics.ucsd.edu/research)
 
-### Campus Events & Partnerships
+### Events and Partnerships
 
 <div class="event-preview">
   <div class="event-preview-caption">
@@ -45,4 +45,16 @@ layout: "resources"
     This event is open to the public and requires no RSVP. Click on the flyer for more details and how to get there.<br><br>
     Coordinate with other PC members on <a href="https://discord.gg/mG9ZE8fSUT">Discord</a> :)
   </div>
+</div>
+
+<div class="event-divider">・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.</div>
+
+<div class="event-preview">
+  <div class="event-preview-caption">
+    Join us November 28&ndash;29 for a camping trip at the Robert Ferguson Observatory!<br><br>
+    Tap the flyer to fill out the interest form.
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScRQ9Z8Bf_IGekF_-3U_tzjJXkDEZ-AsvE-2RTFLoUoMYC1mw/viewform?usp=header">
+    <img src="/images/rfo-flyer.png" alt="Robert Ferguson Observatory camping trip flyer">
+  </a>
 </div>
