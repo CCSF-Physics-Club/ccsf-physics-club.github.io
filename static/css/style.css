@@ -285,13 +285,15 @@ h3 {
   border-bottom: var(--rule);
 }
 
+/* Text on the left, photo on the right (photo stays on top on phones) */
 .potw-photo {
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--panel);
   padding: 2.5rem;
-  border-right: var(--rule);
+  border-left: var(--rule);
+  order: 2;
 }
 
 .potw-photo img {
@@ -881,8 +883,10 @@ h3 {
   .home-gif,
   .potw-photo {
     border-right: none;
+    border-left: none;
     border-bottom: var(--rule);
     padding: 1.5rem;
+    order: 0;
   }
 
   .home-gif {
