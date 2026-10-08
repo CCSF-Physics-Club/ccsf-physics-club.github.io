@@ -1,11 +1,14 @@
 {{ with hugo.Data.potw }}
 {{ $latest := index (sort . "date" "desc") 0 }}
-<div class="home-potw">
-  <h3>Problem of the Week</h3>
-  <p class="potw-week">Week of {{ time.Format "January 2" $latest.date }}</p>
-  <a href="{{ $latest.image | relURL }}" target="_blank">
+<section class="potw-band">
+  <a class="potw-photo" href="{{ $latest.image | relURL }}" target="_blank">
     <img src="{{ $latest.image | relURL }}" alt="{{ $latest.alt | default "Problem of the week" }}">
   </a>
-  {{ with $latest.caption }}<div class="potw-caption">{{ . | safeHTML }}</div>{{ end }}
-</div>
+  <div class="potw-text">
+    <h3>Problem of the Week</h3>
+    <p class="potw-week">Week of {{ time.Format "January 2" $latest.date }}</p>
+    {{ with $latest.caption }}<div class="potw-caption">{{ . | safeHTML }}</div>{{ end }}
+    <p class="potw-hint">Tap the photo to enlarge.</p>
+  </div>
+</section>
 {{ end }}

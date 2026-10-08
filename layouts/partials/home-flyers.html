@@ -1,25 +1,49 @@
 {{ with hugo.Data.flyers }}
-<div id="home-flyers" class="home-flyers">
-  <h3>Events and Partnerships</h3>
-  {{ range . }}
-  <div class="home-flyer"{{ with .expires }} data-expires="{{ . }}"{{ end }}>
-    {{ with .link }}<a href="{{ . }}">{{ end }}<img src="{{ .image | relURL }}" alt="{{ .alt }}">{{ if .link }}</a>{{ end }}
-    <div class="home-flyer-caption">{{ .caption | safeHTML }}</div>
+<section id="home-flyers" class="home-rail">
+  <div class="rail-head">
+    <h3>Events and Partnerships</h3>
+    <div class="rail-controls">
+      <button type="button" id="railPrev" aria-label="Previous flyers">&#8592;</button>
+      <button type="button" id="railNext" aria-label="Next flyers">&#8594;</button>
+    </div>
   </div>
-  {{ end }}
-</div>
+  <div class="rail-track" id="railTrack">
+    {{ range . }}
+    <div class="rail-card"{{ with .expires }} data-expires="{{ . }}"{{ end }}>
+      {{ with .link }}<a href="{{ . }}">{{ end }}<img src="{{ .image | relURL }}" alt="{{ .alt }}">{{ if .link }}</a>{{ end }}
+      <div class="rail-caption">{{ .caption | safeHTML }}</div>
+    </div>
+    {{ end }}
+  </div>
+</section>
 <script>
 (function() {
   var section = document.getElementById('home-flyers');
-  if (!section) return;
+  var track = document.getElementById('railTrack');
+  var prev = document.getElementById('railPrev');
+  var next = document.getElementById('railNext');
+  if (!section || !track) return;
   var today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
-  section.querySelectorAll('.home-flyer').forEach(function(f) {
-    var exp = f.getAttribute('data-expires');
-    if (exp && exp < today) f.remove();
+  track.querySelectorAll('.rail-card').forEach(function(c) {
+    var exp = c.getAttribute('data-expires');
+    if (exp && exp < today) c.remove();
   });
-  if (section.querySelectorAll('.home-flyer').length === 0) {
+  if (track.querySelectorAll('.rail-card').length === 0) {
     section.style.display = 'none';
+    return;
   }
+  function update() {
+    var max = track.scrollWidth - track.clientWidth;
+    prev.parentNode.style.visibility = max > 2 ? 'visible' : 'hidden';
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max - 2;
+  }
+  prev.addEventListener('click', function() { track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' }); });
+  next.addEventListener('click', function() { track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }); });
+  track.addEventListener('scroll', update);
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
 })();
 </script>
 {{ end }}

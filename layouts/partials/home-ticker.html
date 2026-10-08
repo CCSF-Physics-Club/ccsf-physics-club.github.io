@@ -1,0 +1,9 @@
+{{ with hugo.Data.ticker }}
+{{ $items := .items }}
+<div class="home-ticker">
+  <span class="sr-only">{{ delimit $items ", " }}</span>
+  <div class="home-ticker-track" aria-hidden="true">
+    {{ range seq 6 }}{{ range $items }}<span>{{ . }}</span>{{ end }}{{ end }}
+  </div>
+</div>
+{{ end }}

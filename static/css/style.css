@@ -795,3 +795,167 @@ li {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.home-ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+  margin-bottom: 2rem;
+}
+
+.home-ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.home-ticker-track span {
+  padding: 0.55rem 0 0.55rem 2.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.home-ticker-track span::before {
+  content: "\00b7";
+  margin-right: 2.5rem;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-ticker-track { animation: none; }
+}
+
+.potw-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.potw-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #111111;
+}
+
+.potw-text h3 {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #111111;
+}
+
+.potw-week {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+}
+
+.potw-caption {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.potw-hint {
+  margin: 1rem 0 0;
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+.rail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #111111;
+}
+
+.rail-head h3 {
+  margin: 0;
+}
+
+.rail-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rail-controls button {
+  background: none;
+  border: 1px solid #111111;
+  padding: 0.3rem 0.8rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  color: #111111;
+  cursor: pointer;
+}
+
+.rail-controls button:hover:not(:disabled) {
+  background: #111111;
+  color: #ffffff;
+}
+
+.rail-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.rail-track {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.75rem;
+  scrollbar-width: thin;
+}
+
+.rail-card {
+  flex: 1 0 calc((100% - 2rem) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.rail-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  border: 1px solid #111111;
+}
+
+.rail-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .potw-band {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .rail-card {
+    flex: 0 0 80%;
+  }
+}
