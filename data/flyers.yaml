@@ -1,5 +1,6 @@
 - image: "images/lbnl-flyer.png"
   alt: "LBNL event flyer"
+  expires: "2026-10-13"
   link: "https://docs.google.com/forms/d/e/1FAIpQLSd27Y-6Gla-6Ev2QpAv5s6zXM8q3_ggQDqoXm_oOTME7W_EFw/viewform"
   caption: |
     Berkeley Labs is visiting CCSF on October 13 in the STEAM building room 101!<br><br>
@@ -21,7 +22,7 @@
 - image: "images/rfo-flyer.png"
   alt: "Robert Ferguson Observatory camping trip flyer"
   link: "https://docs.google.com/forms/d/e/1FAIpQLScRQ9Z8Bf_IGekF_-3U_tzjJXkDEZ-AsvE-2RTFLoUoMYC1mw/viewform?usp=header"
-  expires: "2026-11-29"
+  expires: "2026-11-28"
   caption: |
     Join us November 28&ndash;29 for a camping trip at the Robert Ferguson Observatory!<br><br>
     Tap the flyer to fill out the interest form.
