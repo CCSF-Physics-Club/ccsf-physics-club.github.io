@@ -10,6 +10,7 @@
   </div>
 
   <div id="home-next-event" class="home-next-event"></div>
+  {{ partial "home-flyers.html" . }}
 
   <script id="home-events-data" type="application/json">
     {{ .Site.Data.events | jsonify }}

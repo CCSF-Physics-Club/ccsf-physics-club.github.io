@@ -1,0 +1,35 @@
+{{ with hugo.Data.flyers }}
+<div id="home-flyers" class="home-flyers">
+  <h3>Events and Partnerships</h3>
+  <div class="home-flyer-list">
+    {{ range . }}
+    <div class="home-flyer"{{ with .expires }} data-expires="{{ . }}"{{ end }}>
+      <div class="event-divider">・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.・。.・゜★・.</div>
+      <div class="event-preview">
+        <div class="event-preview-caption">{{ .caption | safeHTML }}</div>
+        <a href="{{ .link }}"><img src="{{ .image | relURL }}" alt="{{ .alt }}"></a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+<script>
+(function() {
+  var section = document.getElementById('home-flyers');
+  if (!section) return;
+  var today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+  section.querySelectorAll('.home-flyer').forEach(function(f) {
+    var exp = f.getAttribute('data-expires');
+    if (exp && exp < today) f.remove();
+  });
+  var visible = section.querySelectorAll('.home-flyer');
+  if (visible.length === 0) {
+    section.style.display = 'none';
+    return;
+  }
+  visible.forEach(function(f, i) {
+    if (i % 2 === 1) f.querySelector('.event-preview').classList.add('event-preview-reverse');
+  });
+})();
+</script>
+{{ end }}

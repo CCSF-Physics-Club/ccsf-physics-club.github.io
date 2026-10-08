@@ -681,3 +681,28 @@ li {
   margin-top: 0.25rem;
   font-size: 0.75rem;
 }
+
+.home-flyers {
+  margin-top: 2rem;
+}
+
+.home-flyers h3 {
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #111111;
+}
+
+.home-flyers .event-preview img {
+  display: block;
+  border: 1px solid #111111;
+}
+
+.home-flyer:first-child .event-divider {
+  display: none;
+}
+
+@media (min-width: 601px) {
+  .event-preview-reverse {
+    flex-direction: row-reverse;
+  }
+}
