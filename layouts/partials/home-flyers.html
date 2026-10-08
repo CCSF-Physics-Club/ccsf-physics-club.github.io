@@ -7,7 +7,7 @@
   <div class="rail-track" id="railTrack">
     {{ range . }}
     <div class="rail-card"{{ with .expires }} data-expires="{{ . }}"{{ end }}>
-      {{ with .link }}<a href="{{ . }}">{{ end }}<span class="rail-img"><img src="{{ .image | relURL }}" alt="{{ .alt }}"></span>{{ if .link }}</a>{{ end }}
+      {{ if .download }}<a href="{{ .image | relURL }}" download>{{ else }}{{ with .link }}<a href="{{ . }}">{{ end }}{{ end }}<span class="rail-img"><img src="{{ .image | relURL }}" alt="{{ .alt }}"></span>{{ if or .link .download }}</a>{{ end }}
       <div class="rail-info">
         {{ with .title }}<p class="rail-name">{{ . }}</p>{{ end }}
         <div class="rail-caption">{{ .caption | safeHTML }}</div>

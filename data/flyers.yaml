@@ -27,7 +27,7 @@
 
 - image: "images/chipotle.jpeg"
   alt: "Chipotle fundraiser flyer"
-  link: "https://www.chipotle.com/"
+  download: true
   expires: "2026-10-28"
   caption: |
     Chipotle fundraiser for CCSF Physics Club!<br><br>
