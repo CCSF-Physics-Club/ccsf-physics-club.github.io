@@ -1,13 +1,24 @@
 {{ define "main" }}
-  <p class="welcome-line">Welcome to our website!</p>
-
-  <div class="home-gif">
-    <img src="{{ "images/atom-loop.gif" | relURL }}" alt="Atom loop">
+<div class="home-wide">
+  <div class="home-intro">
+    <div class="home-gif">
+      <img src="{{ "images/atom-loop.gif" | relURL }}" alt="Atom loop">
+    </div>
+    <div class="home-intro-text">
+      <p class="welcome-line">Welcome to our website!</p>
+      <div class="home-content">
+        {{ .Content }}
+      </div>
+    </div>
   </div>
 
-  <div class="home-content">
-    {{ .Content }}
+  <div class="home-columns">
+    <section class="home-main">
+      {{ partial "home-potw.html" . }}
+    </section>
+    <aside class="home-side">
+      {{ partial "home-flyers.html" . }}
+    </aside>
   </div>
-
-  {{ partial "home-flyers.html" . }}
+</div>
 {{ end }}

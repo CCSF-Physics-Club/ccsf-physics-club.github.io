@@ -706,3 +706,92 @@ li {
     flex-direction: row-reverse;
   }
 }
+
+@media (min-width: 900px) {
+  .home-wide {
+    width: min(1100px, calc(100vw - 3rem));
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.home-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.home-intro .home-gif {
+  flex: 0 0 300px;
+  max-width: 100%;
+  margin: 0;
+}
+
+.home-intro-text {
+  flex: 1 1 260px;
+}
+
+.home-intro-text .welcome-line {
+  margin: 0 0 1rem;
+}
+
+.home-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .home-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-potw h3,
+.home-flyers h3 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #111111;
+}
+
+.home-side .home-flyers {
+  margin-top: 0;
+}
+
+.potw-week {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+}
+
+.home-potw img,
+.home-flyer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #111111;
+}
+
+.potw-caption,
+.home-flyer-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.home-flyer {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.home-flyer:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
