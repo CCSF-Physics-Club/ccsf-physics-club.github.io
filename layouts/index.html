@@ -1,8 +1,6 @@
 {{ define "main" }}
 <div class="home-wide">
-  {{ partial "home-ticker.html" . }}
-
-  <div class="home-intro">
+  <section class="home-intro">
     <div class="home-gif">
       <img src="{{ "images/atom-loop.gif" | relURL }}" alt="Atom loop">
     </div>
@@ -12,7 +10,7 @@
         {{ .Content }}
       </div>
     </div>
-  </div>
+  </section>
 
   {{ partial "home-potw.html" . }}
   {{ partial "home-flyers.html" . }}

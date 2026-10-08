@@ -1,19 +1,24 @@
 {{ with hugo.Data.flyers }}
 <section id="home-flyers" class="home-rail">
-  <div class="rail-head">
+  <div class="section-head rail-head">
     <h3>Events and Partnerships</h3>
-    <div class="rail-controls">
-      <button type="button" id="railPrev" aria-label="Previous flyers">&#8592;</button>
-      <button type="button" id="railNext" aria-label="Next flyers">&#8594;</button>
-    </div>
   </div>
+  <div class="rail-wrap">
   <div class="rail-track" id="railTrack">
     {{ range . }}
     <div class="rail-card"{{ with .expires }} data-expires="{{ . }}"{{ end }}>
-      {{ with .link }}<a href="{{ . }}">{{ end }}<img src="{{ .image | relURL }}" alt="{{ .alt }}">{{ if .link }}</a>{{ end }}
-      <div class="rail-caption">{{ .caption | safeHTML }}</div>
+      {{ with .link }}<a href="{{ . }}">{{ end }}<span class="rail-img"><img src="{{ .image | relURL }}" alt="{{ .alt }}"></span>{{ if .link }}</a>{{ end }}
+      <div class="rail-info">
+        {{ with .title }}<p class="rail-name">{{ . }}</p>{{ end }}
+        <div class="rail-caption">{{ .caption | safeHTML }}</div>
+      </div>
     </div>
     {{ end }}
+  </div>
+  <div class="rail-controls">
+    <button type="button" id="railPrev" class="rail-arrow rail-arrow-prev" aria-label="Previous flyers"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M13 3 6 10l7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+    <button type="button" id="railNext" class="rail-arrow rail-arrow-next" aria-label="Next flyers"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 3 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+  </div>
   </div>
 </section>
 <script>

@@ -9,42 +9,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
-<body>
+<body class="{{ if .IsHome }}is-home{{ else }}is-page{{ end }}">
 
-  <header style="text-align: center;">
-    <div class="header-top">
-      <div class="header-title-row">
-        <h1><a href="{{ "/" | relURL }}">CCSF Physics Club</a></h1>
-      </div>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <nav class="nav-grid" style="justify-content: center;">
-      <a href="{{ "/" | relURL }}">Home</a>
-      <a href="{{ "/events/" | relURL }}">Events</a>
-      <a href="{{ "/resources/" | relURL }}">Resources</a>
-      <a href="{{ "/join/" | relURL }}">Join</a>
-      <a href="{{ "/about/" | relURL }}">About</a>
+  {{ if .IsHome }}{{ partial "home-ticker.html" . }}{{ end }}
+
+  {{ $here := .RelPermalink }}
+  {{ $main := slice (dict "name" "Events" "url" "/events/") (dict "name" "Resources" "url" "/resources/") (dict "name" "Join" "url" "/join/") (dict "name" "About" "url" "/about/") }}
+  <header class="site-header">
+    <a class="site-logo" href="{{ "/" | relURL }}">CCSF Physics Club</a>
+    <nav class="site-nav" aria-label="Main">
+      {{ range $main }}<a href="{{ .url | relURL }}"{{ if eq $here (.url | relURL) }} aria-current="page"{{ end }}>{{ .name }}</a>{{ end }}
     </nav>
-    <nav class="mobile-nav" id="mobile-nav">
-      <a href="{{ "/" | relURL }}">Home</a>
-      <a href="{{ "/events/" | relURL }}">Events</a>
-      <a href="{{ "/resources/" | relURL }}">Resources</a>
-      <a href="{{ "/join/" | relURL }}">Join</a>
-      <a href="{{ "/about/" | relURL }}">About</a>
-    </nav>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <a href="{{ "/" | relURL }}"{{ if eq $here ("/" | relURL) }} aria-current="page"{{ end }}>Home</a>
+    {{ range $main }}<a href="{{ .url | relURL }}"{{ if eq $here (.url | relURL) }} aria-current="page"{{ end }}>{{ .name }}</a>{{ end }}
+  </nav>
 
   <main>
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer>
-    <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
-    <p>Framework by <a href="https://github.com/gohugoio/hugo">Hugo</a></p>
+  <footer class="site-footer">
+    <a class="footer-logo" href="{{ "/" | relURL }}">
+      <img src="{{ "images/ccsf-atom-logo.PNG" | relURL }}" alt="CCSF Physics Club logo">
+    </a>
+    <div class="footer-meta">
+      <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+      <p>Framework by <a href="https://github.com/gohugoio/hugo">Hugo</a></p>
+    </div>
   </footer>
 
   <script>
