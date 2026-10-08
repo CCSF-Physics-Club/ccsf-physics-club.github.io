@@ -2,28 +2,9 @@
   alt: "LBNL event flyer"
   link: "https://docs.google.com/forms/d/e/1FAIpQLSd27Y-6Gla-6Ev2QpAv5s6zXM8q3_ggQDqoXm_oOTME7W_EFw/viewform"
   caption: |
-    Tap the flyer to RSVP!<br><br>
-    Also, feel free to mention CCSF<br>
-    Physics Club under:<br>
-    "How did you hear about this event/opportunity?"
-
-- image: "images/sfsu-obs.png"
-  alt: "SFSU Observatory"
-  link: "https://physics.sfsu.edu/observatory"
-  expires: "2026-12-04"
-  caption: |
-    Join other PC members in visiting<br>
-    the SFSU Observatory!<br><br>
-    This event is open to the public and requires no RSVP. Click on the flyer for more details and how to get there.<br><br>
-    Coordinate with other PC members on <a href="https://discord.gg/mG9ZE8fSUT">Discord</a> :)
-
-- image: "images/rfo-flyer.png"
-  alt: "Robert Ferguson Observatory camping trip flyer"
-  link: "https://docs.google.com/forms/d/e/1FAIpQLScRQ9Z8Bf_IGekF_-3U_tzjJXkDEZ-AsvE-2RTFLoUoMYC1mw/viewform?usp=header"
-  expires: "2026-11-29"
-  caption: |
-    Join us November 28&ndash;29 for a camping trip at the Robert Ferguson Observatory!<br><br>
-    Tap the flyer to fill out the interest form.
+    Berkeley Labs is visiting CCSF on October 13 in the STEAM building room 101!<br><br>
+    Tap the flyer to RSVP<br><br>
+    (feel free to mention physics club in "how did you hear about this event")
 
 - image: "images/chipotle.jpeg"
   alt: "Chipotle fundraiser flyer"
@@ -36,3 +17,21 @@
     <a href="https://www.google.com/maps/search/50+California+St,+San+Francisco,+CA+94111">50 California St, San Francisco</a><br><br>
     Show the cashier this flyer (digital or paper) before you pay, or order online for pickup with promo code MMD8ZYR on the Chipotle app or website.<br><br>
     This location only, in person or online pickup.
+
+- image: "images/rfo-flyer.png"
+  alt: "Robert Ferguson Observatory camping trip flyer"
+  link: "https://docs.google.com/forms/d/e/1FAIpQLScRQ9Z8Bf_IGekF_-3U_tzjJXkDEZ-AsvE-2RTFLoUoMYC1mw/viewform?usp=header"
+  expires: "2026-11-29"
+  caption: |
+    Join us November 28&ndash;29 for a camping trip at the Robert Ferguson Observatory!<br><br>
+    Tap the flyer to fill out the interest form.
+
+- image: "images/sfsu-obs.png"
+  alt: "SFSU Observatory"
+  link: "https://physics.sfsu.edu/observatory"
+  expires: "2026-12-04"
+  caption: |
+    Join other PC members in visiting<br>
+    the SFSU Observatory!<br><br>
+    This event is open to the public and requires no RSVP. Click on the flyer for more details and how to get there.<br><br>
+    Coordinate with other PC members on <a href="https://discord.gg/mG9ZE8fSUT">Discord</a> :)
