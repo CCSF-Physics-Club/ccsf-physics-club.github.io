@@ -13,18 +13,7 @@
   </div>
 </div>
 
-<div class="events-list-section past-events-section">
-  <button id="pastToggle" class="past-toggle">Show Past Events &#9662;</button>
-  <div id="pastEventsWrap" style="display:none;">
-    <h3>Past Events</h3>
-    <ul id="past-events-list"></ul>
-    <div class="sidebar-nav">
-      <button id="prevPastEvents">&#8592;</button>
-      <span id="pastPageIndicator"></span>
-      <button id="nextPastEvents">&#8594;</button>
-    </div>
-  </div>
-</div>
+{{ partial "events-past-flyers.html" . }}
 
 <script id="events-data" type="application/json">
   {{ .Site.Data.events | jsonify }}
@@ -113,21 +102,11 @@
   }
 
   const upcomingEvents = events.filter(e => e.date >= todayStr);
-  const pastEvents = events.filter(e => e.date < todayStr).reverse();
 
   const upcomingGrouped = groupByDate(upcomingEvents);
-  const pastGrouped = groupByDate(pastEvents);
 
   makePaginator('events-list', 'prevEvents', 'nextEvents', 'pageIndicator', upcomingGrouped);
-  makePaginator('past-events-list', 'prevPastEvents', 'nextPastEvents', 'pastPageIndicator', pastGrouped);
 
-  const toggle = document.getElementById('pastToggle');
-  const wrap = document.getElementById('pastEventsWrap');
-  toggle.addEventListener('click', () => {
-    const isOpen = wrap.style.display !== 'none';
-    wrap.style.display = isOpen ? 'none' : 'block';
-    toggle.innerHTML = isOpen ? 'Show Past Events &#9662;' : 'Hide Past Events &#9652;';
-  });
 })();
 </script>
 

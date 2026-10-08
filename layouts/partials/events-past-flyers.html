@@ -1,0 +1,36 @@
+<div class="events-list-section past-events-section">
+  <button id="pastToggle" class="past-toggle" aria-expanded="false">Show Past Events &#9662;</button>
+  <div id="pastEventsWrap" style="display:none;">
+    <h3>Past Events</h3>
+    <div class="past-flyers" id="pastFlyers">
+      {{ range sort .Site.Data.flyers "expires" "desc" }}{{ if .expires }}
+      <div class="past-flyer" data-expires="{{ .expires }}">
+        <a class="past-flyer-img" href="{{ .image | relURL }}" target="_blank"><img src="{{ .image | relURL }}" alt="{{ .alt }}" loading="lazy"></a>
+        <p class="past-flyer-date">{{ time.Format "January 2, 2006" .expires }}</p>
+      </div>
+      {{ end }}{{ end }}
+    </div>
+    <p class="past-flyers-empty" id="pastFlyersEmpty" style="display:none;">No past events yet.</p>
+  </div>
+</div>
+<script>
+(function() {
+  var today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+  var grid = document.getElementById('pastFlyers');
+  grid.querySelectorAll('.past-flyer').forEach(function(c) {
+    if (c.getAttribute('data-expires') >= today) c.remove();
+  });
+  if (grid.querySelectorAll('.past-flyer').length === 0) {
+    grid.style.display = 'none';
+    document.getElementById('pastFlyersEmpty').style.display = 'block';
+  }
+  var toggle = document.getElementById('pastToggle');
+  var wrap = document.getElementById('pastEventsWrap');
+  toggle.addEventListener('click', function() {
+    var isOpen = wrap.style.display !== 'none';
+    wrap.style.display = isOpen ? 'none' : 'block';
+    toggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    toggle.innerHTML = isOpen ? 'Show Past Events &#9662;' : 'Hide Past Events &#9652;';
+  });
+})();
+</script>

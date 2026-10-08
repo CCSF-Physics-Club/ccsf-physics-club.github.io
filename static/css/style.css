@@ -933,3 +933,59 @@ h3 {
     padding: 1.25rem;
   }
 }
+
+/* ---------- Events: spacing above calendar, past flyers ---------- */
+
+.events-calendar {
+  margin-top: 3.5rem;
+}
+
+.past-toggle {
+  margin-bottom: 1.5rem;
+}
+
+.past-flyers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: var(--rule);
+  border-left: var(--rule);
+}
+
+.past-flyer {
+  border-right: var(--rule);
+  border-bottom: var(--rule);
+}
+
+.past-flyer-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 5;
+  background: var(--panel);
+  padding: 1.25rem;
+  border-bottom: var(--rule);
+}
+
+.past-flyer-img img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.past-flyer-date {
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .events-calendar {
+    margin-top: 2.25rem;
+  }
+
+  .past-flyers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
