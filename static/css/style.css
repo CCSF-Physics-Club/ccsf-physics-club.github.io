@@ -291,7 +291,8 @@ h3 {
   align-items: center;
   justify-content: center;
   background: var(--panel);
-  padding: 2.5rem;
+  padding: 0;
+  overflow: hidden;
   border-left: var(--rule);
   order: 2;
 }
@@ -300,6 +301,8 @@ h3 {
   display: block;
   width: 100%;
   height: auto;
+  min-height: 100%;
+  object-fit: cover;
 }
 
 .potw-text {
@@ -885,7 +888,7 @@ h3 {
     border-right: none;
     border-left: none;
     border-bottom: var(--rule);
-    padding: 1.5rem;
+    padding: 0;
     order: 0;
   }
 
