@@ -27,14 +27,6 @@
     Show the cashier this flyer (digital or paper) before you pay, or order online for pickup with promo code MMD8ZYR on the Chipotle app or website.<br><br>
     This location only, in person or online pickup.
 
-- image: "images/rfo-flyer.png"
-  alt: "Robert Ferguson Observatory camping trip flyer"
-  link: "https://docs.google.com/forms/d/e/1FAIpQLScRQ9Z8Bf_IGekF_-3U_tzjJXkDEZ-AsvE-2RTFLoUoMYC1mw/viewform?usp=header"
-  expires: "2026-11-28"
-  caption: |
-    Join us November 28&ndash;29 for a camping trip at the Robert Ferguson Observatory!<br><br>
-    Tap the flyer to fill out the interest form.
-
 - image: "images/sfsu-obs.png"
   alt: "SFSU Observatory"
   link: "https://physics.sfsu.edu/observatory"
