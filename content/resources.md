@@ -25,6 +25,12 @@ layout: "resources"
 
 ### Zines
 
-[![Physics formula sheet zine](/images/site-zine.png)](/files/physics-formula-sheet.pdf)
-
-Tap the zine to open the physics formula sheet (PDF).
+<div class="zine-feature">
+  <a class="zine-image" href="/files/physics-formula-sheet.pdf">
+    <img src="/images/site-zine.png" alt="Physics formula sheet zine">
+  </a>
+  <div class="zine-text">
+    <p>Tap the zine to open the physics formula sheet (PDF).</p>
+    <p class="source-note">Source: <a href="https://www.chadsprep.com/">chadsprep.com</a></p>
+  </div>
+</div>
