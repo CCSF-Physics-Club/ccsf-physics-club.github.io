@@ -19,3 +19,12 @@ layout: "resources"
 - [UC Santa Cruz](https://physics.ucsc.edu/research/)
 - [UC San Diego](https://physics.ucsd.edu/research)
 
+
+
+---
+
+### Zines
+
+[![Physics formula sheet zine](/images/site-zine.png)](/files/physics-formula-sheet.pdf)
+
+Tap the zine to open the physics formula sheet (PDF).
