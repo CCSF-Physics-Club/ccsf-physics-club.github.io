@@ -800,7 +800,6 @@ h3 {
   body {
     border-left: var(--rule);
     border-right: var(--rule);
-    min-height: 100vh;
   }
 }
 
@@ -1025,4 +1024,36 @@ h3 {
 .zine-text p {
   margin: 0 0 0.5rem;
   text-align: left;
+}
+
+.leadership {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.leader {
+  border: 1px solid #111111;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.leader-role {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.leader-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .leadership {
+    grid-template-columns: 1fr;
+  }
 }

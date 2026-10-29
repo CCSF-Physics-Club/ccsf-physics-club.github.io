@@ -7,6 +7,23 @@ layout: "about"
 
 We host a variety of events to help bring the physics community at CCSF closer! Members can pursue their interests in physics through rigorous studying or more laidback socials; Physics Club is whatever you make of it. We are also here to help support you, so please feel free to talk to other members and officers about how to make the most of your physics experience at CCSF!
 
+### Leadership
+
+<div class="leadership">
+  <div class="leader">
+    <span class="leader-role">President</span>
+    <span class="leader-name">Celia Navarro</span>
+  </div>
+  <div class="leader">
+    <span class="leader-role">ICC Representative</span>
+    <span class="leader-name">Rex Halafihi</span>
+  </div>
+  <div class="leader">
+    <span class="leader-role">Treasurer</span>
+    <span class="leader-name">Frances Shrimplin</span>
+  </div>
+</div>
+
 <h3 id="rules">Rules</h3>
 
 1) **There is no tolerance for discrimination or harassment.** CCSF Physics Club is an inclusive community of students and faculty of diverse backgrounds. Racism, anti-Blackness, xenophobia, misogyny, homophobia, transphobia, and/or classicism is unacceptable and will result in an immediate dismissal from the club.
